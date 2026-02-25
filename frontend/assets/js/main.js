@@ -133,4 +133,42 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+  // WhatsApp Booking Logic
+  const whatsappBtn = document.getElementById('send_booking_whatsapp');
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('bk_name').value.trim();
+      const state = document.getElementById('bk_state').value.trim();
+      const address = document.getElementById('bk_address').value.trim();
+      const eventType = document.getElementById('bk_event_type').value;
+      const people = document.getElementById('bk_people').value;
+      const diet = document.getElementById('bk_diet').value;
+      const phone = document.getElementById('bk_phone').value.trim();
+      const date = document.getElementById('bk_date').value;
+      const email = document.getElementById('bk_email').value.trim();
+
+      // Basic validation
+      if (!name || !state || !address || !phone || !date || eventType === '0' || people === '0' || diet === '0') {
+        alert('Please fill in all required fields to proceed with your booking.');
+        return;
+      }
+
+      const message = `*Fresh Niger Booking Request*%0A%0A` +
+        `*Name:* ${name}%0A` +
+        `*State:* ${state}%0A` +
+        `*Event Address:* ${address}%0A` +
+        `*Event Type:* ${eventType}%0A` +
+        `*No. of People:* ${people}%0A` +
+        `*Dietary Preference:* ${diet}%0A` +
+        `*Contact No:* ${phone}%0A` +
+        `*Date:* ${date}%0A` +
+        `*Email:* ${email}`;
+
+      const whatsappUrl = `https://wa.me/2347077195098?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    });
+  }
 })();
+

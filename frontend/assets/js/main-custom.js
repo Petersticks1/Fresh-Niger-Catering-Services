@@ -34,6 +34,7 @@ Purchase: http://themeforest.net/user/kamleshyadav
             this.bookingForm();
             this.topButton();
             this.popupVideo();
+            this.contactForm();
 
         },
 
@@ -349,6 +350,59 @@ Purchase: http://themeforest.net/user/kamleshyadav
                             $('#cus_note').val(cnote);
                             $('#err3').html(full_msg[1]);
                         }
+                    }
+                });
+            });
+        },
+        contactForm: function () {
+            $('#contactForm').on('submit', function (e) {
+                e.preventDefault();
+                var form = this;
+
+                var name = form.querySelector('[name="name"]').value.trim();
+                var email = form.querySelector('[name="email"]').value.trim();
+                var phone = form.querySelector('[name="phone"]').value.trim();
+                var subject = form.querySelector('[name="subject"]').value.trim();
+                var message = form.querySelector('[name="message"]').value.trim();
+
+                // Basic Validation
+                if (!name || !email || !phone || !message) {
+                    alert("Please fill in all required fields (Name, Email, Phone, and Message).");
+                    return false;
+                }
+
+                // Email format validation
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+                var formData = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    subject: subject || "No Subject",
+                    message: message,
+                };
+
+                var submitBtn = $(form).find('button[type="submit"]');
+                var originalBtnText = submitBtn.html();
+                submitBtn.html('<span>Sending...</span>').prop('disabled', true);
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://demo.altairattic.net/hotel-two/api/contact",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (response) {
+                        alert("Message sent successfully!");
+                        form.reset();
+                        submitBtn.html(originalBtnText).prop('disabled', false);
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Failed to send message. Please try again later.");
+                        submitBtn.html(originalBtnText).prop('disabled', false);
                     }
                 });
             });

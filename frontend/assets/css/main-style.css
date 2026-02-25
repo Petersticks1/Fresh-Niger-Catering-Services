@@ -24,7 +24,7 @@ Purchase: http://themeforest.net/user/kamleshyadav
  	1. Global CSS Start 
  **********************************/
 
- :root {
+:root {
     --cat-title-family: 'Poppins', sans-serif;
     --cat-theme-family: 'Nunito', sans-serif;
     --cat-main-bg: #ffffff;
@@ -143,7 +143,7 @@ h6 {
     margin-bottom: 10px;
     color: var(--cat-title-color);
     text-transform: capitalize;
-    font-family: var( --cat-title-family);
+    font-family: var(--cat-title-family);
     line-height: 1.2;
 }
 
@@ -299,10 +299,12 @@ textarea {
 }
 
 @keyframes bounce {
+
     0%,
     100% {
         transform: translateY(-20px);
     }
+
     50% {
         transform: translateY(0px);
     }
@@ -425,23 +427,43 @@ a.btn-black:active {
     -o-transform: translate(-50%, -50%);
 }
 
+.cat-preloader-inner img.rotating {
+    width: 100px;
+    height: 100px;
+    animation: rotate-logo 2s linear infinite;
+}
+
+@keyframes rotate-logo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 
 /* Animation */
 
 @keyframes shake {
+
     10%,
     90% {
         transform: translate3d(1px, -1px, 0);
     }
+
     20%,
     80% {
         transform: translate3d(-2px, 2px, 0);
     }
+
     30%,
     50%,
     70% {
         transform: translate3d(3px, -4px, 0);
     }
+
     40%,
     60% {
         transform: translate3d(0px, 4px, 0);
@@ -646,7 +668,7 @@ a.btn-black:active {
     padding: 10px 0;
 }
 
-.cat-logo-wrapper {}
+
 
 
 /* Search CSS Start */
@@ -920,11 +942,11 @@ a.btn-black:active {
     margin: auto;
     height: fit-content;
     writing-mode: tb;
-    -webkit-transform: rotate( 180deg);
+    -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
-    transform: rotate( 180deg);
+    transform: rotate(180deg);
     border-radius: 20px 0 0 20px;
     font-weight: 600;
     font-size: 14px;
@@ -932,11 +954,11 @@ a.btn-black:active {
 }
 
 .cat-banner-contact i {
-    -webkit-transform: rotate( 120deg);
-    -moz-transform: rotate( 120deg);
-    -ms-transform: rotate( 120deg);
-    -o-transform: rotate( 120deg);
-    transform: rotate( 120deg);
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    transform: rotate(120deg);
 }
 
 .cat-banner-contact:hover,
@@ -959,10 +981,12 @@ a.btn-black:active {
         -webkit-transform: scale(0.9);
         transform: scale(0.9);
     }
+
     50% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+
     100% {
         -webkit-transform: scale(0.9);
         transform: scale(0.9);
@@ -974,10 +998,12 @@ a.btn-black:active {
         -webkit-transform: scale(0.9);
         transform: scale(0.9);
     }
+
     50% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+
     100% {
         -webkit-transform: scale(0.9);
         transform: scale(0.9);
@@ -1003,15 +1029,19 @@ a.btn-black:active {
     0% {
         transform: rotate(0deg);
     }
+
     25% {
         transform: rotate(90deg);
     }
+
     50% {
         transform: rotate(180deg);
     }
+
     75% {
         transform: rotate(270deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -1075,13 +1105,16 @@ a.btn-black:active {
         -webkit-transform: translate(0, 0);
         opacity: 0;
     }
+
     40% {
         opacity: 1;
     }
+
     80% {
         -webkit-transform: translate(0, 20px);
         opacity: 0;
     }
+
     100% {
         opacity: 0;
     }
@@ -1092,13 +1125,16 @@ a.btn-black:active {
         transform: translate(0, 0);
         opacity: 0;
     }
+
     40% {
         opacity: 1;
     }
+
     80% {
         transform: translate(0, 20px);
         opacity: 0;
     }
+
     100% {
         opacity: 0;
     }
@@ -1378,13 +1414,16 @@ body .search-field {
         border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
         box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
     }
+
     25% {
         border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
     }
+
     50% {
         border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
         box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
     }
+
     75% {
         border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
     }
@@ -1395,13 +1434,16 @@ body .search-field {
         border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
         box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
     }
+
     25% {
         border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
     }
+
     50% {
         border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
         box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
     }
+
     75% {
         border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
     }
@@ -1412,13 +1454,16 @@ body .search-field {
         border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
         box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
     }
+
     25% {
         border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
     }
+
     50% {
         border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
         box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
     }
+
     75% {
         border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
     }
@@ -1429,13 +1474,16 @@ body .search-field {
         border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
         box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
     }
+
     25% {
         border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
     }
+
     50% {
         border-radius: 50% 50% 33% 67%/55% 27% 73% 45%;
         box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
     }
+
     75% {
         border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
     }
@@ -1611,7 +1659,7 @@ body .search-field {
     background-position: center;
     background-repeat: repeat-y;
     height: 100%;
-    transform: rotate( 180deg);
+    transform: rotate(180deg);
 }
 
 .has-bg {
@@ -1717,7 +1765,7 @@ body .search-field {
     width: 100%;
 }
 
-.cat-menu-section {}
+
 
 .cat-menu-section::-webkit-scrollbar {
     width: 3px;
@@ -2004,10 +2052,10 @@ body .search-field {
     text-align: center;
     top: calc(50%);
     position: relative;
-    -webkit-transition: translateY(-50%);
-    -moz-transition: translateY(-50%);
-    -ms-transition: translateY(-50%);
-    -o-transition: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -2271,7 +2319,7 @@ body .search-field {
     background-size: initial;
     z-index: 1;
     background-repeat: no-repeat;
-    transform: rotate( 180deg);
+    transform: rotate(180deg);
     opacity: .2;
 }
 
@@ -2899,7 +2947,7 @@ body .search-field {
     background-position: center;
     background-repeat: repeat-y;
     height: 100%;
-    transform: rotate( 180deg);
+    transform: rotate(180deg);
 }
 
 
@@ -2986,13 +3034,16 @@ body .search-field {
         max-width: 1170px;
         padding: 0;
     }
+
     .close-btn {
         display: none;
     }
+
     /*Header*/
     .menu-btn-wrap>a.menu-btn {
         display: none;
     }
+
     .main-menu .sub-menu {
         position: absolute;
         top: 50px;
@@ -3011,11 +3062,13 @@ body .search-field {
         min-width: 180px;
         border-top: 2px dotted var(--cat-white);
     }
+
     .has-sub-menu:hover .sub-menu {
         transform: scaleY(1);
         visibility: visible;
         opacity: 1;
     }
+
     .has-sub-menu .sub-menu .sub-menu {
         left: unset;
         right: 190px;
@@ -3025,11 +3078,13 @@ body .search-field {
         visibility: hidden;
         opacity: 0;
     }
+
     .has-sub-menu .sub-menu .has-sub-menu:hover .sub-menu {
         transform: scaleY(1);
         visibility: visible;
         opacity: 1;
     }
+
     .has-sub-menu .sub-menu .sub-menu:before {
         content: "";
         position: absolute;
@@ -3040,6 +3095,7 @@ body .search-field {
         border-bottom: 10px solid transparent;
         right: -12px;
     }
+
     .has-sub-menu .sub-menu,
     .has-sub-menu:hover .sub-menu {
         -webkit-transition: var(--cat-transition);
@@ -3048,6 +3104,7 @@ body .search-field {
         -o-transition: var(--cat-transition);
         transition: var(--cat-transition);
     }
+
     .main-menu>ul>li+li {
         margin: 0 0 0 40px;
     }
@@ -3065,6 +3122,7 @@ body .search-field {
     .main-menu ul>li>a {
         padding: 10px 12px;
     }
+
     .top-left-shap,
     .top-right-shap,
     .bottom-left-shap,
@@ -3098,9 +3156,11 @@ body .search-field {
         display: block;
         box-shadow: 0 0 20px rgb(0 0 0 / 45%);
     }
+
     .main-menu.open-menu>ul {
         left: 0;
     }
+
     .main-menu .has-sub-menu:before,
     .main-menu .has-sub-menu:after {
         position: absolute;
@@ -3108,55 +3168,70 @@ body .search-field {
         content: '';
         background: var(--cat-primary-color);
     }
+
     .main-menu .has-sub-menu:after {
         right: 21px;
         width: 12px;
         height: 2px;
         top: 23px;
     }
+
     .main-menu .has-sub-menu:before {
         right: 26px;
         width: 2px;
         height: 12px;
         top: 18px;
     }
+
     .main-menu>ul::-webkit-scrollbar {
         width: 3px;
     }
+
     .main-menu>ul::-webkit-scrollbar-track {
         background-color: var(--cat-border-color);
     }
+
     .main-menu>ul::-webkit-scrollbar-thumb {
         background-color: var(--cat-primary-color);
     }
+
     .main-menu .sub-menu {
         display: none;
     }
+
     .main-menu ul>li>a {
         padding: 15px 20px;
     }
+
     .main-menu>ul>li {
         border-bottom: 1px solid var(--cat-border-color);
     }
+
     .main-menu .sub-menu>li>a {
         width: auto;
     }
+
     .has-sub-menu>.sub-menu>li>a:before {
         content: unset;
     }
+
     .main-menu .sub-menu {
         background: var(--cat-alternate-bg);
         padding-left: 20px;
     }
+
     .main-menu>ul>li.has-sub-menu.open:before {
         content: unset;
     }
+
     .cat-banner-text {
         max-width: 800px;
     }
+
     .cat-banner-title {
         font-size: 40px;
     }
+
     .cat-booking-form {
         padding: 30px 20px 40px;
     }
@@ -3167,19 +3242,23 @@ body .search-field {
         font-size: 42px;
         margin: 20px 0;
     }
+
     .cat-banner-social {
         right: 0;
     }
+
     .nav-pills .nav-link,
     .cat-filter-menu button {
         padding: 8px 10px;
         min-width: 120px;
         font-size: 14px;
     }
+
     .nav li.nav-item,
     .cat-filter-menu button {
         margin: 0 10px 10px 0;
     }
+
     .cat-page-title-section h1 {
         font-size: 38px;
     }
@@ -3191,19 +3270,23 @@ body .search-field {
     .footer-title {
         margin: 0 0 20px;
     }
+
     .cat-banner-text {
         padding: 0;
     }
+
     .cat-booking-form .cat-shapp,
     .cat-booking-form .cat-shapp2 {
         display: none;
     }
+
     .popup-youtube {
         width: 60px;
         height: 60px;
         line-height: 60px;
         font-size: 24px;
     }
+
     .cat-play-btn {
         width: 60px;
         height: 60px;
@@ -3218,30 +3301,38 @@ body .search-field {
         padding: 8px 8px;
         margin: 0 0 0 4px;
     }
+
     .menu-btn-wrap .menu-btn {
         margin: 0 0 0 4px;
     }
+
     .main-menu>ul {
         width: 280px;
     }
+
     .cat-banner-text h4 {
         font-size: 14px;
         padding: 8px 15px;
     }
+
     .cat-banner-title {
         font-size: 28px;
         margin: 15px 0;
     }
+
     .header-btn {
         display: none;
     }
+
     .cat-banner-wrapper {
         padding: 100px 30px 100px 50px;
     }
+
     .cat-banner-text-inner p {
         font-size: 16px;
         margin: 0 auto 0px;
     }
+
     .mlf-testimonials-section:before {
         top: 10px;
         right: 10px;
@@ -3264,10 +3355,12 @@ body .search-field {
         -webkit-transform: translateY(-5px);
         transform: translateY(-5px);
     }
+
     50% {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
     }
+
     100% {
         -webkit-transform: translateY(-5px);
         transform: translateY(-5px);
@@ -3279,10 +3372,12 @@ body .search-field {
         -webkit-transform: translateY(-5px);
         transform: translateY(-5px);
     }
+
     50% {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
     }
+
     100% {
         -webkit-transform: translateY(-5px);
         transform: translateY(-5px);
@@ -3310,6 +3405,7 @@ body .search-field {
     from {
         opacity: 0.4;
     }
+
     to {
         -webkit-transform: scale(2);
         transform: scale(2);
@@ -3321,6 +3417,7 @@ body .search-field {
     from {
         opacity: 0.4;
     }
+
     to {
         -webkit-transform: scale(2);
         transform: scale(2);
