@@ -1,0 +1,129 @@
+/**
+ * Fresh Niger – Brand Overrides
+ * Brand colors: White & Red
+ * White background dominance, red for CTAs and highlights
+ */
+
+:root {
+  --fn-red: #c41e3a;
+  --fn-red-dark: #a01830;
+  --fn-white: #ffffff;
+  --fn-off-white: #fafafa;
+  --fn-text: #333333;
+  --fn-text-muted: #666666;
+}
+
+body { background-color: var(--fn-white); color: var(--fn-text); }
+
+/* Primary buttons and CTAs */
+.cat-btn,
+.header-btn,
+a.cat-btn,
+button.cat-btn {
+  background-color: var(--fn-red) !important;
+  border-color: var(--fn-red) !important;
+  color: var(--fn-white) !important;
+}
+.cat-btn:hover,
+.header-btn:hover,
+a.cat-btn:hover {
+  background-color: var(--fn-red-dark) !important;
+  border-color: var(--fn-red-dark) !important;
+  color: var(--fn-white) !important;
+}
+
+/* Secondary / black button – keep or style as outline */
+.cat-btn.btn-black {
+  background-color: transparent !important;
+  border: 2px solid var(--fn-red) !important;
+  color: var(--fn-red) !important;
+}
+.cat-btn.btn-black:hover {
+  background-color: var(--fn-red) !important;
+  color: var(--fn-white) !important;
+}
+
+/* Headings and links accent */
+.cat-heading-wrapper h4,
+.cat-link,
+a.cat-link {
+  color: var(--fn-red) !important;
+}
+.cat-link:hover { color: var(--fn-red-dark) !important; }
+
+/* Stars and ratings */
+.cat-top-dish-info ul li i.fa-star,
+.cat-top-dish-info ul li i.fa-star-half-o { color: var(--fn-red) !important; }
+
+/* Footer accents */
+.main-footer .footer-title,
+.cat-footer-social a:hover { color: var(--fn-red) !important; }
+
+/* Section backgrounds – keep clean white where possible */
+.cat-section-spacer.has-bg { background-color: var(--fn-off-white) !important; }
+
+/* Service & counter icons (Font Awesome – replace missing SVGs) */
+.cat-service-img .fa,
+.cat-service-img i {
+  display: block;
+  color: var(--fn-red);
+  margin-bottom: 0.5rem;
+}
+.cat-counter-section-inner span .fa,
+.cat-counter-section-inner span i {
+  display: block;
+  color: var(--fn-red);
+  margin-bottom: 0.5rem;
+}
+
+/* Banner / hero – subtle red tint optional */
+.cat-banner-wrapper { background-color: var(--fn-off-white); }
+
+/* Mobile-first: ensure touch targets and spacing */
+@media (max-width: 768px) {
+  .cat-btn, .header-btn { padding: 12px 24px; font-size: 1rem; }
+}
+
+/* Equal Height Service Cards */
+.cat-service-wrapper .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cat-service-wrapper .row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-service-section {
+    display: flex !important;
+    flex-direction: column;
+    height: calc(100% - 30px); /* Account for margin-bottom */
+    width: 100%;
+}
+
+.cat-service-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cat-service-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cat-service-info p {
+    flex: 1;
+}
+
+/* Icon consistency */
+.cat-service-img i {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.cat-service-section:hover .cat-service-img i {
+    transform: scale(1.1);
+}
