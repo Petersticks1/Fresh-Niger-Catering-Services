@@ -1,6 +1,6 @@
 <?php
 /**
- * Fresh Niger – Meal order handler
+ * Royal Flave – Meal order handler
  * Sanitize inputs, send email notification, return success/error.
  * Configure: $to_email, mail server.
  */
@@ -20,7 +20,7 @@ if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $body = "New meal order\n\nName: $name\nEmail: $email\nItems: " . json_encode($items, JSON_PRETTY_PRINT) . "\n\nMessage: $message";
-$subject = 'Fresh Niger – Meal Order from ' . $name;
+$subject = 'Royal Flave – Meal Order from ' . $name;
 $headers = 'From: ' . $email . "\r\n" . 'Reply-To: ' . $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 $sent = @mail($to_email, $subject, $body, $headers);

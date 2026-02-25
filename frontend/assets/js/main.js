@@ -1,5 +1,5 @@
 /**
- * Fresh Niger – main.js
+ * Royal Flave – main.js
  * Navigation toggle, smooth scrolling, search, UI interactions
  */
 (function () {
@@ -155,7 +155,7 @@
         return;
       }
 
-      const message = `*Fresh Niger Booking Request*%0A%0A` +
+      const message = `*Royal Flave Booking Request*%0A%0A` +
         `*Name:* ${name}%0A` +
         `*State:* ${state}%0A` +
         `*Event Address:* ${address}%0A` +

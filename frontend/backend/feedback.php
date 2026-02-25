@@ -1,6 +1,6 @@
 <?php
 /**
- * Fresh Niger – Customer feedback handler
+ * Royal Flave – Customer feedback handler
  * Sanitize inputs, send to support email, redirect with message.
  */
 $to_email = 'support@freshniger.com'; // Set your email
@@ -19,8 +19,8 @@ if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$body = "Feedback from Fresh Niger website\n\nName: $name\nEmail: $email\n\nMessage:\n$message";
-$subject = 'Fresh Niger – Customer Feedback from ' . $name;
+$body = "Feedback from Royal Flave website\n\nName: $name\nEmail: $email\n\nMessage:\n$message";
+$subject = 'Royal Flave – Customer Feedback from ' . $name;
 $headers = 'From: ' . $email . "\r\n" . 'Reply-To: ' . $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 $sent = @mail($to_email, $subject, $body, $headers);

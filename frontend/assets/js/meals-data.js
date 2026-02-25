@@ -1,5 +1,5 @@
 /**
- * Static meal data for Food Catalog (Fresh Niger)
+ * Static meal data for Food Catalog (Royal Flave)
  */
 window.FRESH_NIGER_MEALS = [
   {

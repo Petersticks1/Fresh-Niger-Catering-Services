@@ -427,19 +427,113 @@ a.btn-black:active {
     -o-transform: translate(-50%, -50%);
 }
 
-.cat-preloader-inner img.rotating {
-    width: 100px;
-    height: 100px;
-    animation: rotate-logo 2s linear infinite;
+/* Bouncing letters loader */
+.cat-preloader-inner .loader-logo {
+    display: block;
+    margin: 0 auto 16px;
+    width: 90px;
+    height: auto;
+    opacity: 1;
 }
 
-@keyframes rotate-logo {
+.cat-preloader-inner .loader-brand {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    justify-content: center;
+}
+
+.cat-preloader-inner .loader-brand span {
+    display: inline-block;
+    font-family: var(--cat-title-family);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--cat-primary-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: letterBounce 1s ease-in-out infinite;
+    line-height: 1;
+}
+
+.cat-preloader-inner .loader-brand .gap-letter {
+    width: 10px;
+    display: inline-block;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+/* gap */
+.cat-preloader-inner .loader-brand span:nth-child(7) {
+    animation-delay: 0.44s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(8) {
+    animation-delay: 0.52s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(9) {
+    animation-delay: 0.60s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(10) {
+    animation-delay: 0.68s;
+}
+
+.cat-preloader-inner .loader-brand span:nth-child(11) {
+    animation-delay: 0.76s;
+}
+
+.cat-preloader-inner .loader-sub {
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cat-placeholder);
+    font-family: var(--cat-title-family);
+    font-weight: 500;
+    animation: fadeInSub 1.2s ease infinite alternate;
+}
+
+@keyframes letterBounce {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        color: var(--cat-primary-color);
+    }
+
+    30% {
+        transform: translateY(-18px);
+        color: var(--cat-black);
+    }
+}
+
+@keyframes fadeInSub {
     from {
-        transform: rotate(0deg);
+        opacity: 0.3;
     }
 
     to {
-        transform: rotate(360deg);
+        opacity: 1;
     }
 }
 

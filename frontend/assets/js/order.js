@@ -1,5 +1,5 @@
 /**
- * Fresh Niger – order.js
+ * Royal Flave – order.js
  * Form validation, add-to-cart feedback, submission messages
  */
 (function () {

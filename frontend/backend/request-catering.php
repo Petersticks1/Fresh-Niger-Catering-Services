@@ -1,6 +1,6 @@
 <?php
 /**
- * Fresh Niger – Catering request handler
+ * Royal Flave – Catering request handler
  * Sanitize inputs, send email notification, return success/error.
  */
 header('Content-Type: application/json');
@@ -22,7 +22,7 @@ if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $body = "Catering request\n\nName: $name\nEmail: $email\nPhone: $phone\nEvent type: $event_type\nGuests: $guests\nDate: $date\n\nMessage: $message";
-$subject = 'Fresh Niger – Catering Request from ' . $name;
+$subject = 'Royal Flave – Catering Request from ' . $name;
 $headers = 'From: ' . $email . "\r\n" . 'Reply-To: ' . $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 $sent = @mail($to_email, $subject, $body, $headers);

@@ -1,9 +1,9 @@
 const searchData = [
     // Pages
-    { title: "Home", url: "index.html", category: "Page", description: "Fresh Niger main page" },
+    { title: "Home", url: "index.html", category: "Page", description: "Royal Flave main page" },
     { title: "Menu", url: "menu.html", category: "Page", description: "Browse our delicious menu items" },
     { title: "Events", url: "event.html", category: "Page", description: "Catering for events and celebrations" },
-    { title: "About Us", url: "about.html", category: "Page", description: "Learn more about Fresh Niger Catering Services" },
+    { title: "About Us", url: "about.html", category: "Page", description: "Learn more about Royal Flave Catering Services" },
     { title: "Services", url: "services.html", category: "Page", description: "Explore the catering services we offer" },
     { title: "Contact Us", url: "contact.html", category: "Page", description: "Get in touch with us for quotes and inquiries" },
 
@@ -45,7 +45,7 @@ const searchData = [
     { title: "Fresh Palm Wine", url: "menu.html", category: "Drink", description: "Sweet, fresh wine from local tappers" },
 
     // Menu Items - Specials & Offers
-    { title: "Fresh Niger Signature Platter", url: "menu.html", category: "Special", description: "Seafood Okra, snail, pounded yam, and fried snails" },
+    { title: "Royal Flave Signature Platter", url: "menu.html", category: "Special", description: "Seafood Okra, snail, pounded yam, and fried snails" },
     { title: "Truffle Yam Fries & Dip", url: "menu.html", category: "Special", description: "Crispy yam fries with truffle oil and zesty dip" },
     { title: "Gourmet Suya Pizza", url: "menu.html", category: "Special", description: "Fresh dough topped with spiced beef suya" },
     { title: "Family Pack (Jollof Combo)", url: "menu.html", category: "Offer", description: "Large tray of Jollof, chicken, dodo, and Zobo" }
