@@ -1,13 +1,6 @@
-/*--------------------- Copyright (c) 2021 -----------------------
-[Master Javascript]
 
-Template Name: Catering HTML Template 
-Version: 1.0.0
-Author: Kamleshyadav
-Website: https://www.pixelnx.com/
-Purchase: http://themeforest.net/user/kamleshyadav
 
--------------------------------------------------------------------*/
+
 (function ($) {
     "use strict";
     /*-----------------------------------------------------
