@@ -84,6 +84,14 @@
             // Team slider
             $(document).ready(function () {
                 new Swiper('.team-slider', {
+                    autoplay: {
+                        delay: 1,
+                        disableOnInteraction: false,
+                    },
+                    speed: 4500,
+                    loop: true,
+                    freeMode: true,
+                    allowTouchMove: true, // Re-enabled for mobile accessibility
                     pagination: {
                         el: '.pagination-team-swiper',
                         clickable: true,
@@ -121,6 +129,15 @@
             // Testimonial slider
             $(document).ready(function () {
                 new Swiper('.testimonial-slider', {
+                    autoplay: {
+                        delay: 1,
+                        disableOnInteraction: false,
+                        reverseDirection: true,
+                    },
+                    speed: 7000,
+                    loop: true,
+                    freeMode: true,
+                    allowTouchMove: true, // Re-enabled for mobile accessibility
                     pagination: {
                         el: '.pagination-testimonial-swiper',
                         clickable: true,

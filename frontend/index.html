@@ -20,6 +20,14 @@
     <link rel="stylesheet" href="assets/css/font.css">
     <link rel="stylesheet" href="assets/css/main-style.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="styles/animations.css">
+
+    <!-- Animation & Experience Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 
     <link rel="stylesheet" id="color-change" type="text/css" href="#">
 
@@ -111,6 +119,7 @@
     <div class="cat-main-wrapper">
         <!-- Home Banner Section -->
         <section class="cat-banner-wrapper">
+            <div id="hero-canvas-container"></div>
             <div class="cat-banner-social">
                 <ul>
                     <li><a href="javascript:void(0);">Facebook</a></li>
@@ -139,8 +148,41 @@
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="banner-img">
-                                <img src="assets/images/main/hero.png" alt="Royal Flave">
+                            <div class="banner-img" id="exploding-dish-trigger">
+                                <!-- Interactive Exploding Dish -->
+                                <div class="exploding-dish-container">
+                                    <img src="assets/images/main/pot-empty.png" class="dish-pot" alt="Catering Pot">
+                                    <div class="food-pieces">
+                                        <!-- Original pieces -->
+                                        <img src="assets/images/main/chickenlap.png" class="food-piece piece-meat"
+                                            alt="Grilled Chicken Lap">
+
+
+                                        <!-- New Jollof ingredients -->
+
+                                        <img src="assets/images/main/ricebowl.png" class="food-piece piece-rice-2"
+                                            alt="Jollof Rice Piece">
+                                        <img src="assets/images/main/redpepperbg.png"
+                                            class="food-piece piece-tomato-slice" alt="Red Tomato Slice">
+                                        <img src="assets/images/main/redpepper.png"
+                                            class="food-piece piece-pepper-slice" alt="Pepper Splash">
+                                        <img src="assets/images/main/oilbg.png" class="food-piece piece-garlic"
+                                            alt="Cooking Oil">
+                                        <img src="assets/images/main/onionbg.png" class="food-piece piece-ginger"
+                                            alt="Ginger">
+                                        <img src="assets/images/main/splashpeper.png" class="food-piece piece-pepper-splash"
+                                            alt="Pepper Splash 2">
+                                        <!-- Using onion as ginger if ginger is missing, or just a duplicate onion for now -->
+
+
+                                        <!-- Final assembled overlay -->
+                                        <img src="assets/images/main/full-dish.png" class="dish-full"
+                                            alt="Perfect Dish">
+                                    </div>
+                                </div>
+                                <!-- Fallback for original design if needed -->
+                                <img src="assets/images/main/hero.png" alt="Royal Flave" class="legacy-hero"
+                                    style="display:none;">
                             </div>
 
                         </div>
@@ -170,10 +212,10 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="cat-heading-wrapper">
-                            <h4>
+                            <h4 class="reveal-zoom">
                                 Offer Zone
                             </h4>
-                            <h2>
+                            <h2 class="reveal-zoom">
                                 Popular Dishes Of Our Caterers
                             </h2>
                         </div>
@@ -375,10 +417,10 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="cat-heading-wrapper">
-                            <h4>
+                            <h4 class="reveal-pan-right">
                                 Our Services
                             </h4>
-                            <h2>
+                            <h2 class="reveal-pan-right">
                                 What We Offer
                             </h2>
                         </div>
@@ -536,7 +578,7 @@
                                     <h4>
                                         Book us
                                     </h4>
-                                    <h2>
+                                    <h2 class="reveal-zoom">
                                         Where you want Our Services
                                     </h2>
                                 </div>
@@ -700,7 +742,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div class="cat-story-img">
+                        <div class="cat-story-img reveal-wipe-left">
                             <img src="assets/images/main/hero.png" alt="Royal Flave">
                         </div>
                     </div>
@@ -710,7 +752,7 @@
                                 <h4>
                                     Our Story
                                 </h4>
-                                <h2>
+                                <h2 class="reveal-split">
                                     Trusted By 200 + satisfied clients
                                 </h2>
                             </div>
@@ -757,7 +799,7 @@
                             <!-- <h4>
                                 Our Menu
                             </h4> -->
-                            <h2>
+                            <h2 class="reveal-split">
                                 Featured Culinary Selections
                             </h2>
                         </div>
@@ -2383,6 +2425,14 @@
     <script src="assets/js/search-data.js"></script>
     <script src="assets/js/main-custom.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Project Modules -->
+    <script src="js/threeScene.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/homepage-animation.js"></script>
+    <script src="js/scrollEffects.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main-experience.js"></script>
 </body>
 
 </html>

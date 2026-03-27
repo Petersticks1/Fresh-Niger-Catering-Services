@@ -5,83 +5,105 @@
  */
 
 :root {
-  --fn-red: #c41e3a;
-  --fn-red-dark: #a01830;
-  --fn-white: #ffffff;
-  --fn-off-white: #fafafa;
-  --fn-text: #333333;
-  --fn-text-muted: #666666;
+    --fn-red: #c41e3a;
+    --fn-red-dark: #a01830;
+    --fn-white: #ffffff;
+    --fn-off-white: #fafafa;
+    --fn-text: #333333;
+    --fn-text-muted: #666666;
 }
 
-body { background-color: var(--fn-white); color: var(--fn-text); }
+body {
+    background-color: var(--fn-white);
+    color: var(--fn-text);
+}
 
 /* Primary buttons and CTAs */
 .cat-btn,
 .header-btn,
 a.cat-btn,
 button.cat-btn {
-  background-color: var(--fn-red) !important;
-  border-color: var(--fn-red) !important;
-  color: var(--fn-white) !important;
+    background-color: var(--fn-red) !important;
+    border-color: var(--fn-red) !important;
+    color: var(--fn-white) !important;
 }
+
 .cat-btn:hover,
 .header-btn:hover,
 a.cat-btn:hover {
-  background-color: var(--fn-red-dark) !important;
-  border-color: var(--fn-red-dark) !important;
-  color: var(--fn-white) !important;
+    background-color: var(--fn-red-dark) !important;
+    border-color: var(--fn-red-dark) !important;
+    color: var(--fn-white) !important;
 }
 
 /* Secondary / black button – keep or style as outline */
 .cat-btn.btn-black {
-  background-color: transparent !important;
-  border: 2px solid var(--fn-red) !important;
-  color: var(--fn-red) !important;
+    background-color: transparent !important;
+    border: 2px solid var(--fn-red) !important;
+    color: var(--fn-red) !important;
 }
+
 .cat-btn.btn-black:hover {
-  background-color: var(--fn-red) !important;
-  color: var(--fn-white) !important;
+    background-color: var(--fn-red) !important;
+    color: var(--fn-white) !important;
 }
 
 /* Headings and links accent */
 .cat-heading-wrapper h4,
 .cat-link,
 a.cat-link {
-  color: var(--fn-red) !important;
+    color: var(--fn-red) !important;
 }
-.cat-link:hover { color: var(--fn-red-dark) !important; }
+
+.cat-link:hover {
+    color: var(--fn-red-dark) !important;
+}
 
 /* Stars and ratings */
 .cat-top-dish-info ul li i.fa-star,
-.cat-top-dish-info ul li i.fa-star-half-o { color: var(--fn-red) !important; }
+.cat-top-dish-info ul li i.fa-star-half-o {
+    color: var(--fn-red) !important;
+}
 
 /* Footer accents */
 .main-footer .footer-title,
-.cat-footer-social a:hover { color: var(--fn-red) !important; }
+.cat-footer-social a:hover {
+    color: var(--fn-red) !important;
+}
 
 /* Section backgrounds – keep clean white where possible */
-.cat-section-spacer.has-bg { background-color: var(--fn-off-white) !important; }
+.cat-section-spacer.has-bg {
+    background-color: var(--fn-off-white) !important;
+}
 
 /* Service & counter icons (Font Awesome – replace missing SVGs) */
 .cat-service-img .fa,
 .cat-service-img i {
-  display: block;
-  color: var(--fn-red);
-  margin-bottom: 0.5rem;
+    display: block;
+    color: var(--fn-red);
+    margin-bottom: 0.5rem;
 }
+
 .cat-counter-section-inner span .fa,
 .cat-counter-section-inner span i {
-  display: block;
-  color: var(--fn-red);
-  margin-bottom: 0.5rem;
+    display: block;
+    color: var(--fn-red);
+    margin-bottom: 0.5rem;
 }
 
 /* Banner / hero – subtle red tint optional */
-.cat-banner-wrapper { background-color: var(--fn-off-white); }
+.cat-banner-wrapper {
+    background-color: var(--fn-off-white);
+}
 
 /* Mobile-first: ensure touch targets and spacing */
 @media (max-width: 768px) {
-  .cat-btn, .header-btn { padding: 12px 24px; font-size: 1rem; }
+
+    .cat-btn,
+    .header-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
 }
 
 /* Equal Height Service Cards */
@@ -90,7 +112,7 @@ a.cat-link {
     flex-wrap: wrap;
 }
 
-.cat-service-wrapper .row > [class*='col-'] {
+.cat-service-wrapper .row>[class*='col-'] {
     display: flex;
     flex-direction: column;
 }
@@ -98,7 +120,8 @@ a.cat-link {
 .cat-service-section {
     display: flex !important;
     flex-direction: column;
-    height: calc(100% - 30px); /* Account for margin-bottom */
+    height: calc(100% - 30px);
+    /* Account for margin-bottom */
     width: 100%;
 }
 
@@ -130,7 +153,7 @@ a.cat-link {
     max-height: 400px;
     overflow-y: auto;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: none;
     text-align: left;
@@ -182,8 +205,8 @@ a.cat-link {
     display: inline-block;
 }
 
-/* Ensure search box uses flex properly for results */
-.search-box-container {
-    display: flex;
-    flex-direction: column;
+/* Ensure non-stop smooth marquee for Swiper */
+.swiper-container-free-mode > .swiper-wrapper {
+    transition-timing-function: linear !important;
+    margin: 0 auto;
 }

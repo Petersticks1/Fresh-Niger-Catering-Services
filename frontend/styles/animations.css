@@ -1,0 +1,242 @@
+/* GSAP & Three.js Animation Styles */
+
+:root {
+  --primary-glow: rgba(255, 107, 0, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Three.js Canvas Container */
+#hero-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* Let clicks pass through to text/buttons */
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+#hero-canvas-container.loaded {
+  opacity: 1;
+}
+
+/* Ensure hero content is above canvas */
+.cat-banner-text, .cat-banner-btn-wrap {
+  position: relative;
+  z-index: 2;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth Scroll Container Support */
+body.lenis-scroll {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Reveal Animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* Staggered Items */
+.stagger-item {
+  opacity: 0;
+}
+
+/* Menu Item Hover Effects */
+.cat-top-dish-section {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cat-top-dish-section:hover {
+  transform: scale(1.03) translateY(-10px);
+}
+
+.cat-top-dish-img img {
+  transition: transform 0.6s ease;
+}
+
+.cat-top-dish-section:hover .cat-top-dish-img img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Micro-interactions */
+.cat-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cat-btn:hover {
+  box-shadow: 0 0 20px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-element {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-glow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
+}
+
+/* Performance: Hide animations on mobile if needed */
+@media (max-width: 768px) {
+  .reveal-up, .reveal-left, .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  #hero-canvas-container {
+    opacity: 0.5; /* Fade out 3D on mobile to prioritize text readability */
+  }
+}
+
+/* Exploding Dish Animation Styles */
+.exploding-dish-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.dish-pot {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  mix-blend-mode: screen; /* Knocks out black background */
+}
+
+.dish-full {
+  position: absolute;
+  top: 12%; /* Offset down slightly to sit inside the pot */
+  left: 10%;
+  width: 80%;
+  height: auto;
+  z-index: 10;
+  opacity: 0; /* Animated via GSAP */
+  pointer-events: none;
+  mix-blend-mode: screen; /* Knocks out black background */
+}
+
+.food-pieces {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.food-piece {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  opacity: 0;
+  mix-blend-mode: screen; /* Knocks out black background */
+}
+
+.piece-meat {
+  width: 200px;
+  height: auto;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.piece-chili {
+  width: 200px; height: auto;
+  
+}
+
+.piece-onion {
+  width: 200px; height: auto;
+}
+
+.piece-rice-1 {
+  width: 200px; height: auto;
+}
+
+.piece-rice-2 {
+  width: 200px; height: auto;
+}
+
+.piece-tomato-slice {
+  width: 200px; height: auto;
+}
+
+.piece-pepper-slice {
+  width: 200px; height: auto;
+}
+
+.piece-garlic {
+  width: 200px; height: auto;
+}
+
+.piece-ginger {
+  width: 200px; height: auto;
+}
+
+.piece-bay-leaf {
+  width: 200px; height: auto;
+}
