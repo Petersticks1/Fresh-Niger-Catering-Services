@@ -13,10 +13,25 @@
     --fn-text-muted: #666666;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--fn-white);
     color: var(--fn-text);
+    font-family: 'Nunito', sans-serif;
+    position: relative;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
 
 /* Primary buttons and CTAs */
 .cat-btn,
@@ -96,7 +111,272 @@ a.cat-link {
     background-color: var(--fn-off-white);
 }
 
-/* Mobile-first: ensure touch targets and spacing */
+/* Event Selection Styling - Immersive State */
+.cat-porfolio-section {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 10;
+}
+
+.cat-overlay-text, .cat-overlay-text h4 {
+    pointer-events: none; /* Make clicks pass through to parent card */
+}
+
+.cat-porfolio-section img {
+    transition: all 0.6s ease;
+    pointer-events: none; /* Image is background to the card click */
+}
+
+.cat-porfolio-section:hover img {
+    transform: scale(1.1);
+}
+
+.cat-porfolio-section.is-selected {
+    transform: scale(1.05); /* Image zoom on selection */
+    z-index: 100 !important;
+    border: 4px solid var(--fn-red) !important; /* Thick Red Border */
+    box-shadow: 0 15px 45px rgba(var(--fn-red-rgb), 0.4);
+}
+
+.cat-porfolio-section.is-selected img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* Dim unselected items when something is selected (JS Driven for Compatibility) */
+.cat-filter.selection-active .cat-porfolio-section:not(.is-selected) {
+    opacity: 0.6;
+    filter: grayscale(0.5) blur(1px);
+}
+
+.event-select-indicator {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+    background: var(--fn-red);
+    border: 2px solid var(--fn-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fn-white);
+    font-size: 16px;
+    opacity: 1; /* Always 1 when active */
+    transform: translate(0, 0) scale(1.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 150;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Menu Item Selected State Refinement */
+.cat-pricing-list.is-selected {
+    transform: translateX(10px);
+    background: rgba(var(--fn-red-rgb), 0.08); /* Darker red-tinted bg */
+    border-radius: 12px;
+}
+
+.select-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+    background: #28a745; /* Success Green */
+    border: 2px solid var(--fn-white);
+    border-radius: 50%;
+    display: flex !important; /* Show instantly */
+    align-items: center;
+    justify-content: center;
+    color: var(--fn-white);
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cat-pricing-list.is-selected h4 {
+    color: var(--fn-red);
+    font-weight: 900;
+}
+
+.cat-banner-title {
+    font-size: 2.8rem !important; /* Reduced from original giant h1 size */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .cat-banner-title {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* How It Works Section */
+.cat-how-card h3 {
+    margin: 1.5rem 0 0.8rem;
+    font-size: 1.4rem;
+}
+
+.cat-how-card p {
+    color: var(--fn-text-muted);
+}
+
+.cat-how-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.step-number {
+    position: absolute;
+    top: -10px;
+    right: -25px;
+    background-color: var(--fn-red);
+    color: var(--fn-white);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid var(--fn-white);
+}
+
+/* Menu Selection & Checkout Bar Styling */
+.cat-pricing-list {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.cat-pricing-list:hover {
+    background: rgba(var(--fn-red-rgb), 0.03);
+    border-color: rgba(var(--fn-red-rgb), 0.1);
+    transform: translateY(-2px);
+}
+
+.cat-pricing-list.is-selected {
+    background: rgba(var(--fn-red-rgb), 0.08);
+    border-color: var(--fn-red);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.select-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background: var(--fn-white);
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fn-white);
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.cat-pricing-list.is-selected .select-indicator {
+    background: #28a745;
+    border-color: #28a745;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.cat-checkout-bar {
+    position: fixed;
+    bottom: -120px; /* Initially hidden */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: min(800px, 95vw); /* Added min check to prevent overflow */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 20000; /* Higher than whatsapp-float 9999 */
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid rgba(var(--fn-red-rgb), 0.1);
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+.cat-checkout-bar.is-active {
+    bottom: 30px;
+}
+
+.checkout-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.checkout-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-count {
+    font-weight: 800;
+    color: var(--fn-red);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--fn-primary);
+}
+
+.checkout-btn {
+    border-radius: 30px !important;
+    padding: 12px 25px !important;
+    background: #25D366 !important; /* WhatsApp Green */
+    border: none !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important;
+}
+
+.checkout-btn:hover {
+    background: #128C7E !important;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .cat-checkout-bar {
+        width: 95%;
+        padding: 12px 20px;
+        border-radius: 20px;
+        bottom: -120px;
+    }
+    
+    .cat-checkout-bar.is-active {
+        bottom: 20px;
+    }
+
+    .checkout-info .total-price {
+        font-size: 16px;
+    }
+    
+    .checkout-btn {
+        font-size: 14px !important;
+        padding: 10px 15px !important;
+    }
+}
+
 @media (max-width: 768px) {
 
     .cat-btn,
@@ -205,8 +485,60 @@ a.cat-link {
     display: inline-block;
 }
 
+/* WhatsApp Button Floating */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366;
+    color: #FFF !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #FFF !important;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+}
+
+.cat-card-actions {
+    margin-top: 15px;
+}
+
+
+.w-100 {
+    width: 100% !important;
+}
+
 /* Ensure non-stop smooth marquee for Swiper */
-.swiper-container-free-mode > .swiper-wrapper {
+.swiper-container-free-mode>.swiper-wrapper {
     transition-timing-function: linear !important;
     margin: 0 auto;
+}
+
+/* Typewriter Cursor */
+.typewriter-cursor {
+    display: inline-block;
+    width: 6px; /* Thick cursor per user request */
+    height: 1.2em;
+    background-color: var(--fn-red, #c41e3a);
+    margin-left: 10px;
+    animation: blink_cursor 0.7s infinite alternate;
+    vertical-align: middle;
+}
+
+@keyframes blink_cursor {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }

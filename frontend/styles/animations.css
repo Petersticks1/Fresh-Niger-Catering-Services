@@ -172,10 +172,11 @@ body.lenis-scroll {
   width: 80%;
   height: auto;
   z-index: 10;
-  opacity: 0; /* Animated via GSAP */
+  opacity: 1; /* Always visible per user request */
   pointer-events: none;
   mix-blend-mode: screen; /* Knocks out black background */
 }
+
 
 .food-pieces {
   position: absolute;
