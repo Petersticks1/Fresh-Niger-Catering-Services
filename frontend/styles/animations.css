@@ -241,3 +241,13 @@ body.lenis-scroll {
 .piece-bay-leaf {
   width: 200px; height: auto;
 }
+
+.exploding-dish-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1000px;
+}
+

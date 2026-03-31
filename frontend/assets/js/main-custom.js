@@ -85,12 +85,12 @@
             $(document).ready(function () {
                 new Swiper('.team-slider', {
                     autoplay: {
-                        delay: 1,
+                        delay: 20000,
                         disableOnInteraction: false,
                     },
-                    speed: 4500,
+                    speed: 1200,
                     loop: true,
-                    freeMode: true,
+                    freeMode: false,
                     allowTouchMove: true, // Re-enabled for mobile accessibility
                     pagination: {
                         el: '.pagination-team-swiper',
@@ -130,14 +130,13 @@
             $(document).ready(function () {
                 new Swiper('.testimonial-slider', {
                     autoplay: {
-                        delay: 1,
+                        delay: 20000,
                         disableOnInteraction: false,
-                        reverseDirection: true,
                     },
-                    speed: 7000,
+                    speed: 1200,
                     loop: true,
-                    freeMode: true,
-                    allowTouchMove: true, // Re-enabled for mobile accessibility
+                    freeMode: false,
+                    allowTouchMove: true,
                     pagination: {
                         el: '.pagination-testimonial-swiper',
                         clickable: true,
