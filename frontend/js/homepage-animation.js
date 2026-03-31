@@ -38,7 +38,8 @@ window.initHomepageAnimations = () => {
         gsap.set([pot, fullDish], { rotation: masterDeg });
     });
 
-    // 2. Mouse Parallax (Interactive Tilt)
+    // 2. Localized Hero Mouse Parallax (Return to original behavior)
+    const floatingWrapper = document.querySelector('.banner-img');
     if (window.innerWidth > 1024) {
         dishContainer.addEventListener('mousemove', (e) => {
             const rect = dishContainer.getBoundingClientRect();
@@ -46,10 +47,10 @@ window.initHomepageAnimations = () => {
             const y = (e.clientY - rect.top) / rect.height - 0.5;
 
             gsap.to(dishContainer, {
-                x: x * 20,
-                y: y * 20,
-                rotateY: x * 10,
-                rotateX: -y * 10,
+                x: x * 30,
+                y: y * 30,
+                rotateY: x * 15,
+                rotateX: -y * 15,
                 duration: 1.2,
                 ease: 'power2.out'
             });
