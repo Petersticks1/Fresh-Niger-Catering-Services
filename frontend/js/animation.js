@@ -94,28 +94,6 @@ window.initAnimations = () => {
                 ease: 'power2.out'
             }
         );
-
-        // b) Shake twice when scrolled to
-        ScrollTrigger.create({
-            trigger: el,
-            start: 'top 80%',
-            onEnter: () => {
-                const shakeTl = gsap.timeline();
-                shakeTl.to(el, { x: -8, duration: 0.1, ease: 'power1.inOut' })
-                       .to(el, { x: 8, duration: 0.1, ease: 'power1.inOut' })
-                       .to(el, { x: -8, duration: 0.1, ease: 'power1.inOut' })
-                       .to(el, { x: 8, duration: 0.1, ease: 'power1.inOut' })
-                       .to(el, { x: 0, duration: 0.1, ease: 'back.out(1.7)' });
-            }
-        });
-
-        // c) Shake twice when hovered (focus)
-        el.addEventListener('mouseenter', () => {
-            gsap.timeline({ overwrite: 'auto' })
-                   .to(el, { x: -6, duration: 0.1, repeat: 1, yoyo: true })
-                   .to(el, { x: 6, duration: 0.1, repeat: 1, yoyo: true })
-                   .to(el, { x: 0, duration: 0.1 });
-        });
     });
 
     // 5. Counter Floating Animation (Alternating) - Faster
